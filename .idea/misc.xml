@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/APIGateway" />
+    <file type="web" url="file://$PROJECT_DIR$/configserver" />
+    <file type="web" url="file://$PROJECT_DIR$/eurekaclient1" />
+    <file type="web" url="file://$PROJECT_DIR$/eurekaclient2" />
+    <file type="web" url="file://$PROJECT_DIR$/eurekaclient3" />
+    <file type="web" url="file://$PROJECT_DIR$/eurekaserver" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

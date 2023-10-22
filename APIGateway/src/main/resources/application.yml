@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:8100}
+spring:
+  application:
+    name: ApiGateway
+  cloud:
+    gateway:
+      routes:
+        - id: EurekaClient1
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/client1/**
+        - id: EurekaClient2
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/client2/**
+          filters:
+            - AddRequestHeader=second-request, second-request-header
+            - AddResponseHeader=second-response, second-response-header

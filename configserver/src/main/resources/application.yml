@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/minseo300/spring_cloud_config
+          default-label: main
+
+
+
+server:
+  port: 8200
