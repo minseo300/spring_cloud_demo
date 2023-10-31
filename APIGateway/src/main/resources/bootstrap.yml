@@ -1,26 +1,24 @@
-server:
-  port: ${PORT:8100}
-spring:
-  application:
-    name: ApiGateway
+#server:
+#  port: ${PORT:8100}
+#spring:
+#  application:
+#    name: ApiGateway
 #  cloud:
 #    gateway:
 #      routes:
 #        - id: Order
-#          uri: http://localhost:8081/
+##          uri: http://localhost:8081/
+#          uri: lb://ORDER
 #          predicates:
-#            - Path=/client1/**
+#            - Path=/order/**
 #        - id: User
-#          uri: http://localhost:8082/
+##          uri: http://localhost:8082/
+#          uri: lb://USER
 #          predicates:
-#            - Path=/client2/**
+#            - Path=/user/**
 #          filters:
 #            - AddRequestHeader=second-request, second-request-header
 #            - AddResponseHeader=second-response, second-response-header
-eureka:
-   client:
-     serviceUrl:
-       defaultZone: http://localhost:8080/eureka/
 
 #resilience4j.circuitbreaker:
 #  configs:
@@ -36,5 +34,4 @@ eureka:
 #      waitDurationInOpenState: 10000
 #  instances:
 #    hello:
-
 #      baseConfig: default

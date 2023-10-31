@@ -29,6 +29,19 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+	// 주의할 점은 스프링 AOP 라이브러리도 추가해야 된다는 점입니다.
+	//resilience4j를 스프링 부트에서 사용할 때 메서드 레벨의 애너테이션을 주로 사용하는데 이 과정에서 AOP가 사용되기 때문입니다.
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
+	// 오히려 부트 스타터에서 제공하는 디펜던시만 땡길 경우, application.yml 에서 설정을 해줄 수가 없었습니다.
+	implementation "io.github.resilience4j:resilience4j-spring-boot2"
+
+	// spring cloud loadbalancer
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-loadbalancer', version: '4.0.0'
+
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
